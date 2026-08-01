@@ -1,0 +1,259 @@
+.Contact{
+    background-color:black;
+    color:white;
+    padding:30px;
+}
+.textcolor{
+    color:rgb(249, 156, 26);
+}
+.Social{
+    display:flex;
+    gap:20px !important;
+}
+.Social-icon1{
+    border:2px solid white;
+    border-radius:50%;
+    padding:8px;
+    color:rgb(48, 48, 224);
+}
+.Social-icon2{
+    border:2px solid white;
+    border-radius:50%;
+    padding:8px;
+    color:rgb(22, 236, 22);
+}
+.Social-icon3{
+    border:2px solid white;
+    border-radius:50%;
+    padding:8px;
+    color:#FA2D64;
+    text-align:center;
+}
+
+/* SocialMediaIcons.css */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 230% !important;
+  border: none;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2sease-in-out;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding-top: 15%;
+}
+
+.icon {
+  color: white;
+  font-size: 24px;
+  z-index: 1;
+}
+
+/* Individual button styles */
+.instagram {
+  background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.email {
+  background: #c71610;
+}
+
+.whatsapp {
+  background: linear-gradient(120deg, #25d366, #128c7e);
+}
+
+.github {
+  background: #181717;
+}
+
+/* Hover and Active Effects */
+.icon-button:active {
+  transform: scale(0.85);
+}
+
+.icon-button::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  transition: width 0.3s, height 0.3s;
+}
+
+.icon-button:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.iconborder:hover {
+  background-color: #0b81e2;
+  color: #ffffff !important;
+  outline-color: #0b81e2;
+}
+.iconborder3:hover {
+  outline-offset: 4px;
+}
+.iconborder2:hover {
+  outline-offset: 4px;
+}
+.iconborder1:hover {
+  outline-offset: 4px;
+}
+.iconborder:hover {
+  outline-offset: 4px;
+}
+.iconborder4:hover {
+  outline-offset: 4px;
+}
+.iconborder1:hover {
+  background-color: #0762ad;
+  color: #ffffff !important;
+  outline-color: #0762ad;
+}
+.iconborder2:hover {
+  background-color: #25d366;
+  color: #ffffff !important;
+  outline-color: #25d366;
+}
+.iconborder4:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+  outline-color: #000000;
+}
+.iconborder3:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: #ffffff !important;
+  outline-color: #a02d76;
+}
+
+.iconborder {
+  /* border: 3px solid white; */
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  align-items: center !important;
+  border-radius: 50px;
+  padding-top: 3px;
+  color: white !important;
+  outline: 3px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+.iconborder1 {
+  /* border: 3px solid white; */
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  align-items: center !important;
+  border-radius: 50px;
+  padding-top: 3px;
+  outline: 3px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+.iconborder2 {
+  /* border: 3px solid white; */
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  align-items: center !important;
+  border-radius: 50px;
+  outline: 3px solid #fff;
+  padding-top: 3px;
+  color: white !important;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+.iconborder3 {
+  /* border: 3px solid white; */
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  align-items: center !important;
+  text-decoration: none;
+  border-radius: 50%;
+  padding-top: 3px;
+  outline: 3px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+
+.iconborder4 {
+  /* border: 3px solid white; */
+  width: 40px;
+  height: 40px;
+  text-align: center !important;
+  align-items: center !important;
+  text-decoration: none;
+  border-radius: 50%;
+  padding-top: 3px;
+  outline: 3px solid #fff;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: 0.25s;
+}
+.socialicons1 {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  right: -1%;
+  bottom: 25%;
+}
+.icon-color {
+  color: white;
+}
+@media (max-width: 768px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.Copy{
+    text-align:center !important;
+    align-items:center;
+}
+
+.button {
+  background-color: #f9a01b;
+  color: white;
+  border: none;
+  border-radius:5px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #e68a00;
+}
+.text {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius:5px;
+  width: 70%;
+  margin-right: 10px;
+}

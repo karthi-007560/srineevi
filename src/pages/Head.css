@@ -1,0 +1,21 @@
+.Logo {
+    border-radius: 50%;
+}
+
+.Home {
+    color: chocolate;
+}
+
+.Button {
+    background-color: beige;
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.Search {
+    background-color: beige;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 10px;
+}

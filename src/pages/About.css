@@ -1,0 +1,18 @@
+.Text{
+    text-align:center;
+}
+.Title{
+    text-align:center;
+    color:chocolate;
+    margin-top:30px;
+    margin-bottom:30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.BG{
+     background-image: url("../image/Aboutbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding:40px;
+    color:aliceblue
+}
