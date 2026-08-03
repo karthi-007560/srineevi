@@ -6,6 +6,8 @@ import Product from './Product'
 import About from './About'
 import Service from './Service'
 import Contact from './Contact'
+import Review from './Review'
+import Carous from './Carousel'
 
 
 export default function Home() {
@@ -15,8 +17,10 @@ export default function Home() {
       <Head />  
       <Video/> 
       <About/> 
+      <Carous/>
       <Product/> 
       <Service/>  
+      <Review/>
       <Contact/>
     </div>
   )
