@@ -7,19 +7,20 @@ import Tea from '../image/Tea.jpg';
 import Coffee from '../image/Coffee.jpg';
 import Boost from '../image/Boost.jpg';
 import Samosa from '../image/Samosa.jpg';
-import Eggpuff from '../image/Egg pops.jpg';
+import sandwichs from '../image/sandwichs.jpg';
 import CoolDrink from '../image/Cool drink.jpg';
+import Milk from '../image/Milk.jpg';
 export default function Product() {
     const [showAll, setShowAll] = useState(false);
 
     const drinks = [
         { id: 1, image: Tea, name: "Tea" },
         { id: 2, image: Coffee, name: "Coffee" },
-        { id: 3, image: Boost, name: "Boost" },
-        { id: 4, image: Samosa, name: "Samosa" },
-        { id: 5, image: Eggpuff, name: "Egg Puff" },
-        { id: 6, image: CoolDrink, name: "Cool drink" },
-
+        { id: 3, image: Milk, name: "Milk" },
+        { id: 4, image: Boost, name: "Boost" },
+        { id: 5, image: Samosa, name: "Snacks" },
+        { id: 6, image: sandwichs, name: "Sandwichs" },
+        { id: 7, image: CoolDrink, name: "Cool drink" },
     ];
     return (
         <div>

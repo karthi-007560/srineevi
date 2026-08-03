@@ -1,11 +1,71 @@
-.Top{
-    background-color:#8D4A15;
-    color: whitesmoke;
-    text-align: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-top:5px;
-    padding-bottom:5px;
+.top-bar{
+    width:100%;
+    background:#5b2c06;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding:12px 20px;
+    font-size:16px;
+    font-weight:600;
+    position:sticky;
+    top:0;
+    z-index:999;
 }
-.Toplink{
-    color:whitesmoke !important;
+
+.live-badge{
+    background:#e53935;
+    padding:6px 12px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    animation:pulse 1.5s infinite;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    background:#00ff00;
+    border-radius:50%;
+    animation:blink 1s infinite;
+}
+
+.highlight{
+    color:#FFD54F;
+    font-weight:bold;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.2;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.top-bar p{
+    margin:0;
+}
+
+@media(max-width:768px){
+    .top-bar{
+        flex-direction:column;
+        text-align:center;
+        font-size:14px;
+    }
 }
