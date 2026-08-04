@@ -12,7 +12,7 @@ export default function Top() {
 
       <p>
         🎉 <strong>Subscribe with ₹1,000</strong> &nbsp;|&nbsp;
-        ❤️ <span className="highlight">200 Members Already Joined</span>
+        ❤️ <span className="highlight">200 Already Subscribed</span>
         &nbsp;|&nbsp;
         ☕ Limited Time Offer – Subscribe Now!
       </p>
