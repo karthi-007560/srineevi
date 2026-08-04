@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Top.css";
 
 export default function Top() {
@@ -14,7 +15,9 @@ export default function Top() {
         🎉 <strong>Subscribe with ₹1,000</strong> &nbsp;|&nbsp;
         ❤️ <span className="highlight">200 Already Subscribed</span>
         &nbsp;|&nbsp;
-        ☕ Limited Time Offer – Subscribe Now!git push -u origin main
+        Limited Time Offer – <Link to="/payment" className="subscribe-link">
+          ☕ Subscribe Now
+        </Link>
       </p>
 
     </div>

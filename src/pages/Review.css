@@ -1,5 +1,5 @@
 .review-section {
-  background: #FFFBF2;
+  background-color: #FFFBF2 !important;
 }
 
 .review-section h2 {
@@ -10,7 +10,7 @@
 
 .review-card {
   position: relative;
-  background: #FFFBF2;
+  background-color: #FFFBF2;
   border: 2px solid #d9b26f;
   border-radius: 15px;
   padding: 25px;
