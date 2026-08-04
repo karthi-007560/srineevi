@@ -1,0 +1,110 @@
+/* ===========================
+   MENU PAGE
+=========================== */
+
+.menu-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px 0;
+    color: #5a3e1b;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.menu-card h4 {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-price {
+    color: #28a745;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.order-btn {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    background: #ff9800;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: #e68900;
+    transform: scale(1.03);
+}
+
+.back-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #343a40;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #000;
+}
+
+body {
+    background: #f8f5ef;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .menu-title{
+        font-size:30px;
+    }
+
+    .menu-card img{
+        height:180px;
+    }
+
+    .menu-card h4{
+        font-size:20px;
+    }
+
+    .menu-price{
+        font-size:20px;
+    }
+
+    .order-btn{
+        font-size:16px;
+    }
+
+}
