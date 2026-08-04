@@ -14,7 +14,7 @@ export default function Top() {
         🎉 <strong>Subscribe with ₹1,000</strong> &nbsp;|&nbsp;
         ❤️ <span className="highlight">200 Already Subscribed</span>
         &nbsp;|&nbsp;
-        ☕ Limited Time Offer – Subscribe Now!
+        ☕ Limited Time Offer – Subscribe Now!git push -u origin main
       </p>
 
     </div>
