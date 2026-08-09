@@ -18,61 +18,169 @@ export default function Product({ search = "" }) {
     const [showAll, setShowAll] = useState(false);
 
     const drinks = [
-        { id: 1, image: Tea, name: "Tea" },
-        { id: 2, image: Coffee, name: "Coffee" },
-        { id: 3, image: Milk, name: "Milk" },
-        { id: 4, image: Boost, name: "Boost" },
-        { id: 5, image: Samosa, name: "Snacks" },
-        { id: 6, image: Sandwich, name: "Sandwichs" },
-        { id: 7, image: CoolDrink, name: "Cool drink" },
+        {
+            id: 1,
+            image: Tea,
+            name: "Tea"
+        },
+        {
+            id: 2,
+            image: Coffee,
+            name: "Coffee"
+        },
+        {
+            id: 3,
+            image: Milk,
+            name: "Milk"
+        },
+        {
+            id: 4,
+            image: Boost,
+            name: "Boost"
+        },
+        {
+            id: 5,
+            image: Samosa,
+            name: "Snacks"
+        },
+        {
+            id: 6,
+            image: Sandwich,
+            name: "Sandwichs"
+        },
+        {
+            id: 7,
+            image: CoolDrink,
+            name: "Cool drink"
+        }
     ];
 
+
+    /* SEARCH FILTER */
+
     const filteredDrinks = drinks.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
+        item.name
+            .toLowerCase()
+            .includes(search.trim().toLowerCase())
     );
+
+
+    /* SEARCH RESULT */
+
+    const isSearching = search.trim() !== "";
+
+
+    /* DISPLAY ITEMS */
+
+    const displayedDrinks = isSearching
+        ? filteredDrinks
+        : showAll
+            ? drinks
+            : drinks.slice(0, 3);
+
+
     return (
-    <Container>
 
-        <div className="Title">
-            <h2><b>OUR RECIPE</b></h2>
-        </div>
+        <Container>
 
-        <div className="row">
+            {/* SEARCH RESULT TITLE */}
 
-            {(showAll ? filteredDrinks : filteredDrinks.slice(0, 3)).map((item) => (
+            {isSearching && (
+                <div className="search-title">
 
-                <div className="col-md-4 text-center mb-4" key={item.id}>
+                    <h2>
+                        Search Results
+                    </h2>
 
-                    <img
-                        src={item.image}
-                        alt={item.name}
-                        className="Tea"
-                        style={{
-                            cursor: "pointer",
-                            marginBottom: "30px"
-                        }}
-                        onClick={() => navigate(`/menu/${item.name}`)}
-                    />
+                    <p>
+                        Results for "{search}"
+                    </p>
 
-                    <h5>{item.name}</h5>
+                </div>
+            )}
+
+
+            {/* PRODUCT GRID */}
+
+            <div className="row mt-5 pt-3 mb-3">
+
+                {displayedDrinks.length > 0 ? (
+
+                    displayedDrinks.map((item) => (
+
+                        <div
+                            className="col-md-4 text-center mb-4"
+                            key={item.id}
+                        >
+
+                            <img
+                                src={item.image}
+                                alt={item.name}
+                                className="Tea"
+                                style={{
+                                    cursor: "pointer",
+                                    marginBottom: "30px"
+                                }}
+                                onClick={() =>
+                                    navigate(
+                                        `/menu/${encodeURIComponent(item.name)}`
+                                    )
+                                }
+                            />
+
+                            <h5>
+                                {item.name}
+                            </h5>
+
+                        </div>
+
+                    ))
+
+                ) : (
+
+                    /* NO RESULT */
+
+                    <div className="no-search-result">
+
+                        <h3>
+                            No Products Found
+                        </h3>
+
+                        <p>
+                            No product matches "{search}".
+                        </p>
+
+                    </div>
+
+                )}
+
+            </div>
+
+
+            {/* SHOW MORE */}
+
+            {!isSearching && (
+
+                <div className="text-center mb-4">
+
+                    <button
+                        className="ProductButton"
+                        onClick={() =>
+                            setShowAll(!showAll)
+                        }
+                    >
+
+                        {showAll
+                            ? "Show Less"
+                            : "Show More"
+                        }
+
+                    </button>
 
                 </div>
 
-            ))}
+            )}
 
-        </div>
-
-        <div className="text-center mb-4">
-
-            <button
-                className="ProductButton"
-                onClick={() => setShowAll(!showAll)}
-            >
-                {showAll ? "Show Less" : "Show More"}
-            </button>
-
-        </div>
-
-    </Container>
-);
+        </Container>
+    );
 }

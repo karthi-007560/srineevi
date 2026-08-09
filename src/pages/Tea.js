@@ -1,17 +1,53 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Tea.css";
 
 export default function Cart() {
-
-  const { state } = useLocation();
   const navigate = useNavigate();
 
-  const item = state?.item;
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
-  const [qty, setQty] = useState(1);
+  // Increase Quantity
+  const increaseQty = (index) => {
+    const updated = [...cartItems];
+    updated[index].qty += 1;
 
-  if (!item) {
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+  // Decrease Quantity
+  const decreaseQty = (index) => {
+    const updated = [...cartItems];
+
+    if (updated[index].qty > 1) {
+      updated[index].qty -= 1;
+    } else {
+      updated.splice(index, 1);
+    }
+
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+  // Remove Item
+  const removeItem = (index) => {
+    const updated = cartItems.filter((_, i) => i !== index);
+
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+  // Grand Total
+  const grandTotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
+
+  // Empty Cart
+  if (cartItems.length === 0) {
     return (
       <div className="empty-cart">
         <h2>🛒 Cart is Empty</h2>
@@ -26,60 +62,86 @@ export default function Cart() {
     );
   }
 
-  const totalPrice = item.price * qty;
-
   return (
     <div className="cart-container">
 
+
+
       <h2 className="cart-title">🛒 Your Cart</h2>
 
-      <div className="cart-card">
 
-        <img
-          src={item.image}
-          alt={item.name}
-          className="cart-img"
-        />
 
-        <div className="cart-info">
+      {cartItems.map((item, index) => (
+        <div className="cart-card" key={index}>
 
-          <h3>{item.name}</h3>
+          <img
+            src={item.image}
+            alt={item.name}
+            className="cart-img"
+          />
 
-          <h4>Price : ₹{item.price}</h4>
+          <div className="cart-info">
 
-          <div className="qty-box">
+            <h3>{item.name}</h3>
+
+            <h4>Price : ₹{item.price}</h4>
+
+            <div className="qty-box">
+
+              <button
+                className="qty-btn"
+                onClick={() => decreaseQty(index)}
+              >
+                -
+              </button>
+
+              <span className="qty">
+                {item.qty}
+              </span>
+
+              <button
+                className="qty-btn"
+                onClick={() => increaseQty(index)}
+              >
+                +
+              </button>
+
+            </div>
+
+            <h3 className="total-price">
+              Total : ₹{item.price * item.qty}
+            </h3>
 
             <button
-              className="qty-btn"
-              onClick={() => qty > 1 && setQty(qty - 1)}
+              className="checkout-btn"
+              onClick={() => removeItem(index)}
             >
-              -
-            </button>
-
-            <span className="qty">{qty}</span>
-
-            <button
-              className="qty-btn"
-              onClick={() => setQty(qty + 1)}
-            >
-              +
+              Remove
             </button>
 
           </div>
 
-          <h3 className="total-price">
-            Total : ₹{totalPrice}
-          </h3>
-
         </div>
+      ))}
 
+      <h2
+        style={{
+          textAlign: "center",
+          marginTop: "20px",
+          color: "green"
+        }}
+      >
+        Grand Total : ₹{grandTotal}
+      </h2>
+
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
         <button
           className="checkout-btn"
           onClick={() =>
             navigate("/checkout", {
               state: {
-                item,
-                qty
+                cartItems,
+                grandTotal
               }
             })
           }
@@ -87,6 +149,12 @@ export default function Cart() {
           Checkout
         </button>
 
+        <button
+          className="back-btn mb-4 ms-4"
+          onClick={() => navigate(-1)}
+        >
+          ← Back
+        </button>
       </div>
 
     </div>

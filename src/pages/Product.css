@@ -82,3 +82,31 @@
     margin:40px 0 20px;
     font-weight:bold;
 }
+.search-title {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.search-title h2 {
+    color: #5a321f;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.search-title p {
+    color: #777;
+}
+
+.no-search-result {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.no-search-result h3 {
+    color: #5a321f;
+}
+
+.no-search-result p {
+    color: #777;
+}

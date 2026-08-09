@@ -232,6 +232,9 @@
     display: flex;
     justify-content: center;
   }
+  .newsletter{
+    display: flex !important;
+  }
 }
 
 .Copy{

@@ -16,6 +16,7 @@
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
     text-align:center;
+    margin-bottom: 30px;
 }
 
 .checkout-img{
@@ -37,7 +38,6 @@
 }
 
 .place-btn{
-    width:100%;
     padding:14px;
     margin-top:20px;
     background:#28a745;
@@ -54,10 +54,14 @@
 
 .back-btn{
     padding:12px 25px;
-    background:#ff9800;
+    background:rgb(94,54,54);
     color:#fff;
     border:none;
     border-radius:8px;
+}
+.back-btn:hover{
+    background-color: #ff9800;
+    color: black;
 }
 .place-btn:disabled{
     background:#bdbdbd;

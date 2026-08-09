@@ -1,21 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import "./Checkot.css";
 
 export default function Checkout() {
-
     const { state } = useLocation();
     const navigate = useNavigate();
 
-    const item = state?.item;
-    const qty = state?.qty || 1;
+    const cartItems = state?.cartItems || [];
+    const grandTotal = state?.grandTotal || 0;
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
 
-    if (!item) {
+    if (cartItems.length === 0) {
         return (
             <div className="checkout-container">
                 <h2>No Order Found</h2>
@@ -30,34 +28,91 @@ export default function Checkout() {
         );
     }
 
-    const total = item.price * qty;
+    const placeOrder = () => {
+        const message = `
+☕ *Srineevi Coffee House*
+
+🧑 Customer Name: ${name}
+📞 Phone: ${phone}
+
+📍 Delivery Address:
+${address}
+
+----------------------------
+
+🛒 Order Details
+
+${cartItems
+                .map(
+                    (item) =>
+                        `• ${item.name} x ${item.qty} = ₹${item.price * item.qty}`
+                )
+                .join("\n")}
+
+----------------------------
+
+💰 Grand Total: ₹${grandTotal}
+
+🙏 Thank You
+`;
+
+        const shopNumber = "9087870472";
+
+        window.open(
+            `https://wa.me/${shopNumber}?text=${encodeURIComponent(message)}`,
+            "_blank"
+        );
+
+        localStorage.removeItem("cart");
+
+        navigate("/success");
+    };
 
     return (
         <div className="checkout-container">
 
+
             <h2 className="checkout-title">Checkout</h2>
 
+
+
+            {cartItems.map((item, index) => (
+                <div className="checkout-card" key={index}>
+
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        className="checkout-img"
+                        style={{
+                            width: "120px",
+                            height: "120px",
+                            objectFit: "cover",
+                            borderRadius: "50%"
+                        }}
+                    />
+
+                    <h3>{item.name}</h3>
+
+                    <p>Price : ₹{item.price}</p>
+
+                    <p>Quantity : {item.qty}</p>
+
+                    <h3>Total : ₹{item.price * item.qty}</h3>
+
+                </div>
+            ))}
+
+            <h2
+                style={{
+                    textAlign: "center",
+                    color: "green",
+                    marginBottom: "20px"
+                }}
+            >
+                Grand Total : ₹{grandTotal}
+            </h2>
+
             <div className="checkout-card">
-
-                <img
-                    src={item.image}
-                    alt={item.name}
-                    className="checkout-img"
-                    style={{
-                        width: "120px",
-                        height: "120px",
-                        objectFit: "cover",
-                        borderRadius: "50%"
-                    }}
-                />
-
-                <h3>{item.name}</h3>
-
-                <p>Price : ₹{item.price}</p>
-
-                <p>Quantity : {qty}</p>
-
-                <h3>Total : ₹{total}</h3>
 
                 <input
                     type="text"
@@ -81,14 +136,21 @@ export default function Checkout() {
                     rows="4"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                ></textarea>
+                />
 
                 <button
                     className="place-btn"
                     disabled={!name || !phone || !address}
-                    onClick={() => navigate("/success")}
+                    onClick={placeOrder}
                 >
                     Place Order
+                </button>
+
+                <button
+                    className="back-btn mb-3 ms-4"
+                    onClick={() => navigate(-1)}
+                >
+                    ← Back
                 </button>
 
             </div>

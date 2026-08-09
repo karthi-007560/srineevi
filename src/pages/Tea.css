@@ -30,6 +30,7 @@ body{
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
     transition:.3s;
+    margin-bottom: 30px;
 }
 
 .cart-card:hover{
@@ -165,7 +166,6 @@ body{
     }
 
     .checkout-btn{
-        width:100%;
         margin-top:20px;
     }
 

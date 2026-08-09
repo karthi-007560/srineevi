@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/esm/Container';
 
 function Carous() {
   return (
-    <Container className='carousel-container mt-4'>
+    <Container className='carousel-container mt-4 mb-5'>
     <Carousel>
       <Carousel.Item>
         <img src={Carouselimg1}  className='Carousel-img' alt="First slide" />

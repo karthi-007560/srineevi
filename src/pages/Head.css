@@ -19,3 +19,50 @@
     border-radius: 10px;
     margin-right: 10px;
 }
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.user-email {
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.Button {
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: 2px solid black;
+    background: #F5F5DC;
+    color: rgb(231, 125, 4);
+    cursor: pointer;
+}
+
+.Button:hover {
+    background: #eb9160;
+    color: antiquewhite;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 991px) {
+
+    .user-area {
+        margin-left: 0;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Search {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+}

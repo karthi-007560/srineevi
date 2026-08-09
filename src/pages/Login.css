@@ -1,102 +1,99 @@
-.login-container {
-    background-image: url("../image/loginbgimg.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    width: 100%;
+.login-page {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 20px;
+    padding: 50px 20px;
+    background: #f8f3ee;
+    box-sizing: border-box;
 }
 
-.login-box {
-    width: 380px;
-    padding: 35px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 45px 40px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
     text-align: center;
-    color: white;
+    box-sizing: border-box;
 }
 
-.login-box h2 {
-    margin-bottom: 10px;
+.login-container h2 {
+    margin: 0 0 10px;
+    color: #5a321f;
+    font-size: 30px;
+    font-weight: 700;
 }
 
-.login-box p {
-    margin-bottom: 20px;
+.login-container > p {
+    margin: 0 0 30px;
+    color: #777;
+    font-size: 15px;
 }
 
 .input-box {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-
+    height: 50px;
+    padding: 12px 15px;
+    margin-bottom: 18px;
     border: 1px solid #ddd;
     border-radius: 8px;
     outline: none;
-
-    font-size: 16px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
 }
 
 .input-box:focus {
-    border-color: orange;
-    box-shadow: 0 0 5px orange;
+    border-color: #8b4513;
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.forgot-password {
+    width: 100%;
+    text-align: right;
+    margin-top: -5px;
+    margin-bottom: 22px;
+}
+
+.forgot-password span {
+    color: #8b4513;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.forgot-password span:hover {
+    text-decoration: underline;
 }
 
 .button-box {
     width: 100%;
-    padding: 12px;
-
-    background: orange;
-    color: white;
-
+    height: 50px;
     border: none;
     border-radius: 8px;
-
-    font-size: 17px;
-    font-weight: bold;
+    background: #8b4513;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .button-box:hover {
-    background: #ff8800;
-    transform: scale(1.03);
-}
-
-.forgot-password {
-    text-align: right;
-    margin-bottom: 15px;
-}
-
-.forgot-password span {
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.forgot-password span:hover {
-    color: orange;
+    background: #5f2f16;
+    transform: translateY(-2px);
 }
 
 .signup-text {
-    margin-top: 20px;
-    color: white;
+    margin-top: 25px !important;
+    margin-bottom: 0 !important;
+    color: #666;
+    font-size: 14px;
 }
 
 .signup-text span {
-    color: orange;
+    color: #0d6efd;
     font-weight: bold;
     cursor: pointer;
 }
@@ -105,18 +102,44 @@
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .login-box {
-        width: 95%;
-        padding: 25px;
+.login-container .alert {
+    margin-bottom: 22px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+@media (max-width: 576px) {
+
+    .login-page {
+        min-height: 100vh;
+        padding: 30px 15px;
     }
 
-    .login-box h2 {
-        font-size: 24px;
+    .login-container {
+        width: 100%;
+        padding: 35px 22px;
+        border-radius: 14px;
     }
 
-    .input-box,
+    .login-container h2 {
+        font-size: 25px;
+    }
+
+    .login-container > p {
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+
+
+    .input-box {
+        height: 48px;
+        margin-bottom: 16px;
+        font-size: 14px;
+    }
+
     .button-box {
+        height: 48px;
         font-size: 15px;
     }
+
 }

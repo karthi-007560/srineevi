@@ -2,29 +2,24 @@ import React from 'react'
 import './Contact.css'
 import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/esm/Container';
+import { useNavigate } from "react-router-dom";
 import {
-    FaTwitter,
     FaFacebookF,
     FaEnvelope,
     FaInstagram,
     FaWhatsapp,
 } from "react-icons/fa";
+import Logo from '../image/logo.jpeg';
 
 export default function Contact() {
+    const navigate = useNavigate();
     return (
         <div className='Contact'>
             <Container>
                 <div className='row md-12 '>
 
                     <div className='col-md-3 '>
-                        <h2 className='textcolor'>Company</h2>
-                        <ul>
-                            <p> About Us</p>
-                            <p> Contact Us</p>
-                            <p> Reservation</p>
-                            <p> Privacy Policy</p>
-                            <p> Terms & Condition</p>
-                        </ul>
+                        <img src={Logo} alt='logo' width={200} style={{ alignItems: 'Center', borderRadius: '50%' }} />
                     </div>
 
                     <div className='col-md-3'>
@@ -65,7 +60,7 @@ export default function Contact() {
                                     <FaWhatsapp className="icon-color" />
                                 </Link>
                             </div>
-                            
+
                             <div className="iconborder3">
                                 <Link
                                     className="iconcolor"
@@ -96,7 +91,8 @@ export default function Contact() {
                         </p>
                         <div className="newsletter">
                             <input type="email" placeholder="Your email" className="text" />
-                            <button className="button">SIGNUP</button>
+                            <button className="button" onClick={() => navigate("/signup")}
+                            >SIGNUP</button>
                         </div>
                     </div>
 
@@ -104,7 +100,7 @@ export default function Contact() {
             </Container>
             <hr />
             <div className='Copy'>
-                Copyright @ 2026 All Right Reserver By SRI NEEVI COFFEE HOUSE <span className='textcolor'>|</span> Designed By <span><a href="https://karthi-frontend-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer"  className='textcolor'>Karthi-007</a></span>
+                Copyright @ 2026 All Right Reserver By SRI NEEVI COFFEE HOUSE <span className='textcolor'>|</span> Designed By <span><a href="https://karthi-frontend-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className='textcolor'>Karthi-007</a></span>
             </div>
         </div>
     )
