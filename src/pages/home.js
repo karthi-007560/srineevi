@@ -3,6 +3,7 @@ import React from "react";
 import Video from "./Video";
 import About from "./About";
 import Carous from "./Carousel";
+import Product from "./Product"
 import Service from "./Service";
 import Review from "./Review";
 
@@ -26,6 +27,7 @@ export default function Home() {
             {/* OFFERS / CAROUSEL */}
 
             <Carous />
+            <Product/>
 
 
             {/* SERVICES */}

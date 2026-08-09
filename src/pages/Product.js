@@ -46,7 +46,7 @@ export default function Product({ search = "" }) {
         {
             id: 6,
             image: Sandwich,
-            name: "Sandwichs"
+            name: "Sandwich"
         },
         {
             id: 7,

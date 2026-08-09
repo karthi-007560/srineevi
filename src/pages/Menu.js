@@ -61,7 +61,7 @@ export default function Menu() {
 
         ],
 
-        Sandwichs: [
+        Sandwich: [
             { id: 1, image: Breadomelette, name: "Bread omelette", price: 40 },
             { id: 2, image: Sandwich, name: "Cheese Sandwich", price: 50 },
         ],
@@ -109,7 +109,7 @@ export default function Menu() {
             </button>
 
 
-            <div className="row ">
+            <div className="row mb-5 pb-4">
 
                 {items.map((item) => (
 
